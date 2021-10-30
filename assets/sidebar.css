@@ -1,0 +1,20 @@
+.sidebar {
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+    width: 4em;
+    line-height: 1.25rem;
+    transition: width 2s;
+  }
+
+  .sidebar:hover {
+    width: 12rem;
+  }
+
+  .submenu{
+    transition: height 2s;
+  }
+  .submenu:blur{
+    height: 1rem;
+  }
