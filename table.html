@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Hello, world!</title>
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="./assets/theme.css" />
+    <link rel="stylesheet" href="./assets/site.css" />
+    <link rel="stylesheet" href="./assets/sidebar.css" />
+  </head>
+
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="bootstrap" viewBox="0 0 118 94">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+        ></path>
+      </symbol>
+      <symbol id="home" viewBox="0 0 16 16">
+        <path
+          d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"
+        ></path>
+      </symbol>
+      <symbol id="speedometer2" viewBox="0 0 16 16">
+        <path
+          d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"
+        ></path>
+        <path
+          fill-rule="evenodd"
+          d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"
+        ></path>
+      </symbol>
+      <symbol id="table" viewBox="0 0 16 16">
+        <path
+          d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"
+        ></path>
+      </symbol>
+      <symbol id="people-circle" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+        <path
+          fill-rule="evenodd"
+          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+        ></path>
+      </symbol>
+      <symbol id="grid" viewBox="0 0 16 16">
+        <path
+          d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"
+        ></path>
+      </symbol>
+    </svg>
+
+    <header class="p-3 mb-3 border-bottom fixed-top shadow bg-white">
+      <div class="container-fluid">
+        <div class="d-flex flex-wrap align-items-center justify-content-start">
+          <a
+            href="/"
+            class="d-flex align-items-center mb-0 me-auto text-dark text-decoration-none"
+          >
+            <svg class="bi me-2" width="40" height="32">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+            <span class="fs-4">Simple header</span>
+          </a>
+
+          <form class="mb-0 me-3 col-2 col-sm-3">
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+          </form>
+
+          <div class="mb-0 me-1 dropdown text-end">
+            <a
+              href="#"
+              class="d-block link-dark text-decoration-none dropdown-toggle"
+              id="dropdownUser1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://avatars.githubusercontent.com/u/11496339?s=400&u=79f0d5cd3d0e6a679fa469da78cd399a2de04589&v=4"
+                alt="mdo"
+                class="rounded-circle"
+                width="32"
+                height="32"
+              />
+            </a>
+            <ul
+              class="dropdown-menu text-small"
+              aria-labelledby="dropdownUser1"
+            >
+              <li><a class="dropdown-item" href="#">New project...</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid ps-0 pe-0" style="margin-top: 5rem">
+      <div class="d-flex flex-row border-0 bg-light">
+        <div
+          onmouseleave="toggleSubMenu()"
+          class="col-2 sidebar d-block ps-1 pe-1 link-dark text-decoration-none shadow-lg p-3 mb-2 bg-white rounded"
+        >
+          <ul class="list-unstyled">
+            <li class="mb-1">
+              <div
+                class="d-flex btn-group btn-toggle align-items-center rounded collapsed"
+                role="group"
+                data-bs-toggle="collapse"
+                data-bs-target="#home-collapse"
+                aria-expanded="false"
+              >
+                <button
+                  type="button"
+                  class="btn flex-shrink-0 flex-grow-0 ps-1 pe-3"
+                >
+                  <svg class="btn bi p-0 m-0" role="img" aria-label="dashboard">
+                    <use xlink:href="#home"></use>
+                  </svg>
+                </button>
+                <button
+                  style="font-size: 1rem; font-weight: 600"
+                  type="button"
+                  class="w-100 btn m-0 p-0"
+                >
+                  Home
+                </button>
+              </div>
+
+              <div class="collapse" id="home-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="#" class="link-dark rounded">dashboard</a></li>
+                  <li><a href="#" class="link-dark rounded">Processed</a></li>
+                  <li><a href="#" class="link-dark rounded">Shipped</a></li>
+                  <li><a href="#" class="link-dark rounded">Returned</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="border-top my-1"></li>
+
+            <li class="mb-1">
+              <div
+                class="d-flex btn-group btn-toggle align-items-center rounded collapsed"
+                role="group"
+                data-bs-toggle="collapse"
+                data-bs-target="#dashboard-collapse"
+                aria-expanded="false"
+              >
+                <button
+                  type="button"
+                  class="btn flex-shrink-0 flex-grow-0 ps-1 pe-3"
+                >
+                  <svg class="btn bi p-0 m-0" role="img" aria-label="dashboard">
+                    <use xlink:href="#speedometer2"></use>
+                  </svg>
+                </button>
+                <button
+                  style="font-size: 1rem; font-weight: 600"
+                  type="button"
+                  class="w-100 btn m-0 p-0"
+                >
+                  Dashboard
+                </button>
+              </div>
+
+              <div class="collapse" id="dashboard-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="#" class="link-dark rounded">New</a></li>
+                  <li><a href="#" class="link-dark rounded">Processed</a></li>
+                  <li><a href="#" class="link-dark rounded">Shipped</a></li>
+                  <li><a href="#" class="link-dark rounded">Returned</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-auto flex-fill px-2 min-vh-100">
+          <div class="d-flex flex-column">
+            <div class="my-3 p-3 bg-body rounded shadow-sm">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                "
+              >
+                <div class="btn-group btn-group-sm" role="group">
+                  <h4 class="border-bottom pb-2 mb-0">Data table</h4>
+                </div>
+                <select
+                  onchange="data_table.paging()"
+                  class="form-control sm"
+                  name="pagesize"
+                  id="pagesize"
+                  style="width: 60px"
+                >
+                  <option selected="selected" value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                  <option value="500">500</option>
+                </select>
+              </div>
+
+              <div class="d-flex text-muted pt-3">
+                <table id="my_table_id" class="table">
+                  <thead>
+                    <tr>
+                      <th>Country</th>
+                      <th>ISO Code</th>
+                    </tr>
+                    
+                  </thead>
+                  <tbody>
+                    <tr class="s">
+                      <td>AFGHANISTAN</td>
+                      <td>AF</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ALBANIA</td>
+                      <td>AL</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ALGERIA</td>
+                      <td>DZ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>AMERICAN SAMOA</td>
+                      <td>AS</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ANDORRA</td>
+                      <td>AD</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ANGOLA</td>
+                      <td>AO</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ANTARCTICA</td>
+                      <td>AQ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ANTIGUA AND BARBUDA</td>
+                      <td>AG</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ARGENTINA</td>
+                      <td>AR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ARMENIA</td>
+                      <td>AM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ARUBA</td>
+                      <td>AW</td>
+                    </tr>
+                    <tr class="s">
+                      <td>AUSTRALIA</td>
+                      <td>AU</td>
+                    </tr>
+                    <tr class="s">
+                      <td>AUSTRIA</td>
+                      <td>AT</td>
+                    </tr>
+                    <tr class="s">
+                      <td>AZERBAIJAN</td>
+                      <td>AZ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BAHAMAS</td>
+                      <td>BS</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BAHRAIN</td>
+                      <td>BH</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BANGLADESH</td>
+                      <td>BD</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BARBADOS</td>
+                      <td>BB</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BELARUS</td>
+                      <td>BY</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BELGIUM</td>
+                      <td>BE</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BELIZE</td>
+                      <td>BZ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BENIN</td>
+                      <td>BJ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BERMUDA</td>
+                      <td>BM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BHUTAN</td>
+                      <td>BT</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BOLIVIA</td>
+                      <td>BO</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BOSNIA AND HERZEGOVINA</td>
+                      <td>BA</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BOTSWANA</td>
+                      <td>BW</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BOUVET ISLAND</td>
+                      <td>BV</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BRAZIL</td>
+                      <td>BR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BRITISH INDIAN OCEAN TERRITORY</td>
+                      <td>IO</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BRUNEI DARUSSALAM</td>
+                      <td>BN</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BULGARIA</td>
+                      <td>BG</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BURKINA FASO</td>
+                      <td>BF</td>
+                    </tr>
+                    <tr class="s">
+                      <td>BURUNDI</td>
+                      <td>BI</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CAMBODIA</td>
+                      <td>KH</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CAMEROON</td>
+                      <td>CM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CANADA</td>
+                      <td>CA</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CAPE VERDE</td>
+                      <td>CV</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CAYMAN ISLANDS</td>
+                      <td>KY</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CENTRAL AFRICAN REPUBLIC</td>
+                      <td>CF</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CHAD</td>
+                      <td>TD</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CHILE</td>
+                      <td>CL</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CHINA</td>
+                      <td>CN</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CHRISTMAS ISLAND</td>
+                      <td>CX</td>
+                    </tr>
+                    <tr class="s">
+                      <td>COCOS (KEELING) ISLANDS</td>
+                      <td>CC</td>
+                    </tr>
+                    <tr class="s">
+                      <td>COLOMBIA</td>
+                      <td>CO</td>
+                    </tr>
+                    <tr class="s">
+                      <td>COMOROS</td>
+                      <td>KM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CONGO</td>
+                      <td>CG</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CONGO, THE DEMOCRATIC REPUBLIC OF THE</td>
+                      <td>CD</td>
+                    </tr>
+                    <tr class="s">
+                      <td>COOK ISLANDS</td>
+                      <td>CK</td>
+                    </tr>
+                    <tr class="s">
+                      <td>COSTA RICA</td>
+                      <td>CR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CÔTE D'IVOIRE</td>
+                      <td>CI</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CROATIA</td>
+                      <td>HR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CUBA</td>
+                      <td>CU</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CYPRUS</td>
+                      <td>CY</td>
+                    </tr>
+                    <tr class="s">
+                      <td>CZECH REPUBLIC</td>
+                      <td>CZ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>DENMARK</td>
+                      <td>DK</td>
+                    </tr>
+                    <tr class="s">
+                      <td>DJIBOUTI</td>
+                      <td>DJ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>DOMINICA</td>
+                      <td>DM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>DOMINICAN REPUBLIC</td>
+                      <td>DO</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ECUADOR</td>
+                      <td>EC</td>
+                    </tr>
+                    <tr class="s">
+                      <td>EGYPT</td>
+                      <td>EG</td>
+                    </tr>
+                    <tr class="s">
+                      <td>EL SALVADOR</td>
+                      <td>SV</td>
+                    </tr>
+                    <tr class="s">
+                      <td>EQUATORIAL GUINEA</td>
+                      <td>GQ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ERITREA</td>
+                      <td>ER</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ESTONIA</td>
+                      <td>EE</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ETHIOPIA</td>
+                      <td>ET</td>
+                    </tr>
+                    <tr class="s">
+                      <td>FALKLAND ISLANDS (MALVINAS)</td>
+                      <td>FK</td>
+                    </tr>
+                    <tr class="s">
+                      <td>FAROE ISLANDS</td>
+                      <td>FO</td>
+                    </tr>
+                    <tr class="s">
+                      <td>FIJI</td>
+                      <td>FJ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>FINLAND</td>
+                      <td>FI</td>
+                    </tr>
+                    <tr class="s">
+                      <td>FRANCE</td>
+                      <td>FR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>FRENCH GUIANA</td>
+                      <td>GF</td>
+                    </tr>
+                    <tr class="s">
+                      <td>FRENCH POLYNESIA</td>
+                      <td>PF</td>
+                    </tr>
+                    <tr class="s">
+                      <td>FRENCH SOUTHERN TERRITORIES</td>
+                      <td>TF</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GABON</td>
+                      <td>GA</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GAMBIA</td>
+                      <td>GM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GEORGIA</td>
+                      <td>GE</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GERMANY</td>
+                      <td>DE</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GHANA</td>
+                      <td>GH</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GIBRALTAR</td>
+                      <td>GI</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GREECE</td>
+                      <td>GR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GREENLAND</td>
+                      <td>GL</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GRENADA</td>
+                      <td>GD</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GUADELOUPE</td>
+                      <td>GP</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GUAM</td>
+                      <td>GU</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GUATEMALA</td>
+                      <td>GT</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GUINEA</td>
+                      <td>GN</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GUINEA-BISSAU</td>
+                      <td>GW</td>
+                    </tr>
+                    <tr class="s">
+                      <td>GUYANA</td>
+                      <td>GY</td>
+                    </tr>
+                    <tr class="s">
+                      <td>HAITI</td>
+                      <td>HT</td>
+                    </tr>
+                    <tr class="s">
+                      <td>HEARD ISLAND AND MCDONALD ISLANDS</td>
+                      <td>HM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>HONDURAS</td>
+                      <td>HN</td>
+                    </tr>
+                    <tr class="s">
+                      <td>HONG KONG</td>
+                      <td>HK</td>
+                    </tr>
+                    <tr class="s">
+                      <td>HUNGARY</td>
+                      <td>HU</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ICELAND</td>
+                      <td>IS</td>
+                    </tr>
+                    <tr class="s">
+                      <td>INDIA</td>
+                      <td>IN</td>
+                    </tr>
+                    <tr class="s">
+                      <td>INDONESIA</td>
+                      <td>ID</td>
+                    </tr>
+                    <tr class="s">
+                      <td>IRAN, ISLAMIC REPUBLIC OF</td>
+                      <td>IR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>IRAQ</td>
+                      <td>IQ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>IRELAND</td>
+                      <td>IE</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ISRAEL</td>
+                      <td>IL</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ITALY</td>
+                      <td>IT</td>
+                    </tr>
+                    <tr class="s">
+                      <td>JAMAICA</td>
+                      <td>JM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>JAPAN</td>
+                      <td>JP</td>
+                    </tr>
+                    <tr class="s">
+                      <td>JORDAN</td>
+                      <td>JO</td>
+                    </tr>
+                    <tr class="s">
+                      <td>KAZAKHSTAN</td>
+                      <td>KZ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>KENYA</td>
+                      <td>KE</td>
+                    </tr>
+                    <tr class="s">
+                      <td>KIRIBATI</td>
+                      <td>KI</td>
+                    </tr>
+                    <tr class="s">
+                      <td>KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF</td>
+                      <td>KP</td>
+                    </tr>
+                    <tr class="s">
+                      <td>KOREA, REPUBLIC OF</td>
+                      <td>KR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>KUWAIT</td>
+                      <td>KW</td>
+                    </tr>
+                    <tr class="s">
+                      <td>KYRGYZSTAN</td>
+                      <td>KG</td>
+                    </tr>
+                    <tr class="s">
+                      <td>LAO PEOPLE'S DEMOCRATIC REPUBLIC(LAOS)</td>
+                      <td>LA</td>
+                    </tr>
+                    <tr class="s">
+                      <td>LATVIA</td>
+                      <td>LV</td>
+                    </tr>
+                    <tr class="s">
+                      <td>LEBANON</td>
+                      <td>LB</td>
+                    </tr>
+                    <tr class="s">
+                      <td>LESOTHO</td>
+                      <td>LS</td>
+                    </tr>
+                    <tr class="s">
+                      <td>LIBERIA</td>
+                      <td>LR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>LIBYA, STATE OF</td>
+                      <td>LY</td>
+                    </tr>
+                    <tr class="s">
+                      <td>LIECHTENSTEIN</td>
+                      <td>LI</td>
+                    </tr>
+                    <tr class="s">
+                      <td>LITHUANIA</td>
+                      <td>LT</td>
+                    </tr>
+                    <tr class="s">
+                      <td>LUXEMBOURG</td>
+                      <td>LU</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MACAO</td>
+                      <td>MO</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF</td>
+                      <td>MK</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MADAGASCAR</td>
+                      <td>MG</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MALAWI</td>
+                      <td>MW</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MALAYSIA</td>
+                      <td>MY</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MALDIVES</td>
+                      <td>MV</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MALI</td>
+                      <td>ML</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MALTA</td>
+                      <td>MT</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MARSHALL ISLANDS</td>
+                      <td>MH</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MARTINIQUE</td>
+                      <td>MQ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MAURITANIA</td>
+                      <td>MR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MAURITIUS</td>
+                      <td>MU</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MAYOTTE</td>
+                      <td>YT</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MEXICO</td>
+                      <td>MX</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MICRONESIA, FEDERATED STATES OF</td>
+                      <td>FM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MOLDOVA, REPUBLIC OF</td>
+                      <td>MD</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MONACO</td>
+                      <td>MC</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MONGOLIA</td>
+                      <td>MN</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MONTENEGRO</td>
+                      <td>ME</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MONTSERRAT</td>
+                      <td>MS</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MOROCCO</td>
+                      <td>MA</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MOZAMBIQUE</td>
+                      <td>MZ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>MYANMAR</td>
+                      <td>MM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NAMIBIA</td>
+                      <td>NA</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NAURU</td>
+                      <td>NR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NEPAL, FEDERAL DEMOCRATIC REPUBLIC OF</td>
+                      <td>NP</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NETHERLANDS</td>
+                      <td>NL</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NETHERLANDS ANTILLES</td>
+                      <td>AN</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NEW CALEDONIA</td>
+                      <td>NC</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NEW ZEALAND</td>
+                      <td>NZ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NICARAGUA</td>
+                      <td>NI</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NIGER</td>
+                      <td>NE</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NIGERIA</td>
+                      <td>NG</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NIUE</td>
+                      <td>NU</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NORFOLK ISLAND</td>
+                      <td>NF</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NORTHERN MARIANA ISLANDS</td>
+                      <td>MP</td>
+                    </tr>
+                    <tr class="s">
+                      <td>NORWAY</td>
+                      <td>NO</td>
+                    </tr>
+                    <tr class="s">
+                      <td>OMAN</td>
+                      <td>OM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>PAKISTAN</td>
+                      <td>PK</td>
+                    </tr>
+                    <tr class="s">
+                      <td>PALAU</td>
+                      <td>PW</td>
+                    </tr>
+                    <tr class="s">
+                      <td>PALESTINE, STATE OF</td>
+                      <td>PS</td>
+                    </tr>
+                    <tr class="s">
+                      <td>PANAMA</td>
+                      <td>PA</td>
+                    </tr>
+                    <tr class="s">
+                      <td>PAPUA NEW GUINEA</td>
+                      <td>PG</td>
+                    </tr>
+                    <tr class="s">
+                      <td>PARAGUAY</td>
+                      <td>PY</td>
+                    </tr>
+                    <tr class="s">
+                      <td>PERU</td>
+                      <td>PE</td>
+                    </tr>
+                    <tr class="s">
+                      <td>PHILIPPINES</td>
+                      <td>PH</td>
+                    </tr>
+                    <tr class="s">
+                      <td>PITCAIRN</td>
+                      <td>PN</td>
+                    </tr>
+                    <tr class="s">
+                      <td>POLAND</td>
+                      <td>PL</td>
+                    </tr>
+                    <tr class="s">
+                      <td>PORTUGAL</td>
+                      <td>PT</td>
+                    </tr>
+                    <tr class="s">
+                      <td>PUERTO RICO</td>
+                      <td>PR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>QATAR</td>
+                      <td>QA</td>
+                    </tr>
+                    <tr class="s">
+                      <td>RÉUNION</td>
+                      <td>RE</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ROMANIA</td>
+                      <td>RO</td>
+                    </tr>
+                    <tr class="s">
+                      <td>RUSSIAN FEDERATION</td>
+                      <td>RU</td>
+                    </tr>
+                    <tr class="s">
+                      <td>RWANDA</td>
+                      <td>RW</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SAINT HELENA</td>
+                      <td>SH</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SAINT KITTS AND NEVIS</td>
+                      <td>KN</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SAINT LUCIA</td>
+                      <td>LC</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SAINT PIERRE AND MIQUELON</td>
+                      <td>PM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SAINT VINCENT AND THE GRENADINES</td>
+                      <td>VC</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SAMOA</td>
+                      <td>WS</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SAN MARINO</td>
+                      <td>SM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SAO TOME AND PRINCIPE</td>
+                      <td>ST</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SAUDI ARABIA</td>
+                      <td>SA</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SENEGAL</td>
+                      <td>SN</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SERBIA</td>
+                      <td>RS</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SEYCHELLES</td>
+                      <td>SC</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SIERRA LEONE</td>
+                      <td>SL</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SINGAPORE</td>
+                      <td>SG</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SLOVAKIA</td>
+                      <td>SK</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SLOVENIA</td>
+                      <td>SI</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SOLOMON ISLANDS</td>
+                      <td>SB</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SOMALIA</td>
+                      <td>SO</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SOUTH AFRICA</td>
+                      <td>ZA</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS</td>
+                      <td>GS</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SOUTH SUDAN</td>
+                      <td>SS</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SPAIN</td>
+                      <td>ES</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SRI LANKA</td>
+                      <td>LK</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SUDAN</td>
+                      <td>SD</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SURINAME</td>
+                      <td>SR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SVALBARD AND JAN MAYEN</td>
+                      <td>SJ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SWAZILAND</td>
+                      <td>SZ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SWEDEN</td>
+                      <td>SE</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SWITZERLAND</td>
+                      <td>CH</td>
+                    </tr>
+                    <tr class="s">
+                      <td>SYRIAN ARAB REPUBLIC</td>
+                      <td>SY</td>
+                    </tr>
+                    <tr class="s">
+                      <td>TAIWAN</td>
+                      <td>TW</td>
+                    </tr>
+                    <tr class="s">
+                      <td>TAJIKISTAN</td>
+                      <td>TJ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>TANZANIA, UNITED REPUBLIC OF</td>
+                      <td>TZ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>THAILAND</td>
+                      <td>TH</td>
+                    </tr>
+                    <tr class="s">
+                      <td>TIMOR-LESTE</td>
+                      <td>TL</td>
+                    </tr>
+                    <tr class="s">
+                      <td>TOGO</td>
+                      <td>TG</td>
+                    </tr>
+                    <tr class="s">
+                      <td>TOKELAU</td>
+                      <td>TK</td>
+                    </tr>
+                    <tr class="s">
+                      <td>TONGA</td>
+                      <td>TO</td>
+                    </tr>
+                    <tr class="s">
+                      <td>TRINIDAD AND TOBAGO</td>
+                      <td>TT</td>
+                    </tr>
+                    <tr class="s">
+                      <td>TUNISIA</td>
+                      <td>TN</td>
+                    </tr>
+                    <tr class="s">
+                      <td>TURKEY</td>
+                      <td>TR</td>
+                    </tr>
+                    <tr class="s">
+                      <td>TURKMENISTAN</td>
+                      <td>TM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>TURKS AND CAICOS ISLANDS</td>
+                      <td>TC</td>
+                    </tr>
+                    <tr class="s">
+                      <td>TUVALU</td>
+                      <td>TV</td>
+                    </tr>
+                    <tr class="s">
+                      <td>UGANDA</td>
+                      <td>UG</td>
+                    </tr>
+                    <tr class="s">
+                      <td>UKRAINE</td>
+                      <td>UA</td>
+                    </tr>
+                    <tr class="s">
+                      <td>UNITED ARAB EMIRATES</td>
+                      <td>AE</td>
+                    </tr>
+                    <tr class="s">
+                      <td>UNITED KINGDOM</td>
+                      <td>GB</td>
+                    </tr>
+                    <tr class="s">
+                      <td>UNITED STATES</td>
+                      <td>US</td>
+                    </tr>
+                    <tr class="s">
+                      <td>UNITED STATES MINOR OUTLYING ISLANDS</td>
+                      <td>UM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>URUGUAY</td>
+                      <td>UY</td>
+                    </tr>
+                    <tr class="s">
+                      <td>UZBEKISTAN</td>
+                      <td>UZ</td>
+                    </tr>
+                    <tr class="s">
+                      <td>VANUATU</td>
+                      <td>VU</td>
+                    </tr>
+                    <tr class="s">
+                      <td>VENEZUELA</td>
+                      <td>VE</td>
+                    </tr>
+                    <tr class="s">
+                      <td>VIET NAM</td>
+                      <td>VN</td>
+                    </tr>
+                    <tr class="s">
+                      <td>VIRGIN ISLANDS, BRITISH</td>
+                      <td>VG</td>
+                    </tr>
+                    <tr class="s">
+                      <td>VIRGIN ISLANDS, U.S.</td>
+                      <td>VI</td>
+                    </tr>
+                    <tr class="s">
+                      <td>WALLIS AND FUTUNA</td>
+                      <td>WF</td>
+                    </tr>
+                    <tr class="s">
+                      <td>WESTERN SAHARA</td>
+                      <td>EH</td>
+                    </tr>
+                    <tr class="s">
+                      <td>YEMEN</td>
+                      <td>YE</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ZAMBIA</td>
+                      <td>ZM</td>
+                    </tr>
+                    <tr class="s">
+                      <td>ZIMBABWE</td>
+                      <td>ZW</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <small class="d-block text-center mt-3">
+                <nav id="pagination"></nav>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid px-0">
+      <footer
+        class="d-flex flex-row flex-wrap justify-content-between align-items-right py-3 px-3 my-4 border-top"
+      >
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+          <a href="/" class="me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <svg class="bi" width="24" height="24">
+              <use xlink:href="#bootstrap" />
+            </svg>
+          </a>
+          <span class="text-muted">&copy; 2021 Company, Inc</span>
+        </div>
+
+        <ul class="nav col-md-6 justify-content-end list-unstyled d-flex">
+          <li class="ms-3">
+            <a class="text-muted" href="#"><svg class="bi">
+                <use xlink:href="#grid" /></svg></a>
+          </li>
+          <li class="ms-3">
+            <img class="bi" src="./assets/svg/home.svg" alt="Home" />
+          </li>
+          <li class="ms-3">
+            <a class="text-muted" href="#"><svg class="bi">
+                <use xlink:href="#grid" /></svg></a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/dataTable.js"></script>
+
+    <script>
+      //call paging onload
+      data_table.paging();
+    </script>
+  </body>
+</html>
