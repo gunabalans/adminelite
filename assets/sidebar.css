@@ -3,7 +3,7 @@
     overflow-y: auto;
     background-color: #f5f5f5;
     border-right: 1px solid #eee;
-    width: 4em;
+    width: 3rem;
     line-height: 1.25rem;
     transition: width 2s;
   }
